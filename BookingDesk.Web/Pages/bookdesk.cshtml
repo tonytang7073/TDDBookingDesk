@@ -1,0 +1,36 @@
+﻿@page
+@model BookingDesk.Web.Pages.BookDeskModel
+@{
+    ViewData["Title"] = "Book a Desk";
+}
+<h1 class="display-4">Book a desk</h1>
+<p class="lead">at our coffee shop in <b>Zurich</b> for a full day.</p>
+
+<form method="post">
+
+  <div class="form-group">
+    <label asp-for="BookingRequest.Firstname" class="control-label"></label>
+    <input asp-for="BookingRequest.Firstname" class="form-control">
+    <span asp-validation-for="BookingRequest.Firstname" class="text-danger"></span>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="BookingRequest.Lastname" class="control-label"></label>
+    <input asp-for="BookingRequest.Lastname" class="form-control">
+    <span asp-validation-for="BookingRequest.Lastname" class="text-danger"></span>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="BookingRequest.Email" class="control-label"></label>
+    <input asp-for="BookingRequest.Email" class="form-control">
+    <span asp-validation-for="BookingRequest.Email" class="text-danger"></span>
+  </div>
+
+  <div class="form-group">
+    <label asp-for="BookingRequest.Date" class="control-label"></label>
+    <input asp-for="BookingRequest.Date" asp-format="{0:dd/MM/yyyy}" class="form-control">
+    <span asp-validation-for="BookingRequest.Date" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Book a desk</button>
+
+</form>
