@@ -9,9 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingDesk", "BookingDesk\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingDesk.DataAccess", "BookingDesk.DataAccess\BookingDesk.DataAccess.csproj", "{41F2494D-9A92-4B45-B998-220AC184B61C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingDesk.DataAccess.Test", "BookingDesk.DataAccess.Test\BookingDesk.DataAccess.Test.csproj", "{CB198406-877B-4E1B-A06C-1611C499C56C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingDesk.DataAccess.Test", "BookingDesk.DataAccess.Test\BookingDesk.DataAccess.Test.csproj", "{CB198406-877B-4E1B-A06C-1611C499C56C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingDesk.Web", "BookingDesk.Web\BookingDesk.Web.csproj", "{4921E7A0-FBB0-466E-94BF-4217EC17651F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingDesk.Web", "BookingDesk.Web\BookingDesk.Web.csproj", "{4921E7A0-FBB0-466E-94BF-4217EC17651F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{18C1C593-D5D3-4B81-9591-3D93D66304B9}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
