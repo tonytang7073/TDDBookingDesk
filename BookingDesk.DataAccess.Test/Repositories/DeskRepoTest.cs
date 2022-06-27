@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 using BookingDesk.Domain;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Xunit.Abstractions;
 
 namespace BookingDesk.DataAccess.Repositories
 {
     public class DeskRepoTest
     {
+        private readonly ITestOutputHelper _output;
+
+        public DeskRepoTest(ITestOutputHelper testOutputHelper)
+        {
+            _output = testOutputHelper;
+        }
+
         [Fact]
         public void ShouldReturnAll()
         {
@@ -21,6 +30,7 @@ namespace BookingDesk.DataAccess.Repositories
             var connectionbuilder = new SqliteConnectionStringBuilder { DataSource = ":memory:" };
             var connection = new SqliteConnection(connectionbuilder.ToString());
             var options = new DbContextOptionsBuilder<BookingDeskDbContext>()
+                .UseLoggerFactory(new LoggerFactory(new[] {new EFCoreLoggerProvider((log) => { _output.WriteLine(log); })} ))
                 .UseSqlite(connection)
                 .Options;
 
@@ -57,6 +67,7 @@ namespace BookingDesk.DataAccess.Repositories
             var connectionbuilder = new SqliteConnectionStringBuilder { DataSource = ":memory:" };
             var connection = new SqliteConnection(connectionbuilder.ToString());
             var options = new DbContextOptionsBuilder<BookingDeskDbContext>()
+                .UseLoggerFactory(new LoggerFactory(new[] { new EFCoreLoggerProvider((log) => { _output.WriteLine(log); }) }))
                 .UseSqlite(connection)
                 .Options;
 
